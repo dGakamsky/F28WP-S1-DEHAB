@@ -1,4 +1,4 @@
-var myGamePiece;
+var myPlayer;
 var myGameCoin;
 var score;
 
@@ -7,7 +7,7 @@ function startGame() {
 	myGameArea.start();
 	
 	//creates player with width, height, colour and coordinates
-	myGamePiece = new component(50, 50, "purple", 100, 200);
+	myPlayer = new component(50, 50, "purple", 100, 200);
 	myGameCoin = new componentCoin(10, 10, "Yellow", 400, 400);
 	score = 0;
 	
@@ -29,10 +29,11 @@ var myGameArea = {
 document.body.childNodes[0]);
 		this.interval = setInterval(updateGameArea, 20);
 		window.addEventListener('keydown', function (e) {
-			myGameArea.key = e.keyCode;
+			myGameArea.key = (myGameArea.key || []);
+			myGameArea.key[e.keyCode] = true;
 		})
 		window.addEventListener('keyup', function (e) {
-			myGameArea.key = false;
+			myGameArea.key[e.keyCode] = false;
 		})
 	},
 	clear : function() {
@@ -90,26 +91,26 @@ function component(width, height, color, x, y) {
 //Game controller for the arrow keys
 function updateGameArea() {
 	myGameArea.clear()
-	myGamePiece.speedX = 0;
-	myGamePiece.speedY = 0;
+	myPlayer.speedX = 0;
+	myPlayer.speedY = 0;
 //keys now use W,A,S,D keys to move the player
 // https://codepen.io/tomhodgins/pen/vXmJdw website shows which keycodes for WASD keys
 //changed speed from -1,1,-1,1 to ,-10,10,-10,10 to make player move faster/smoother
-	if (myGameArea.key && myGameArea.key == 65) {myGamePiece.speedX =
+	if (myGameArea.key && myGameArea.key[65]) {myPlayer.speedX =
 -10; }
-	if (myGameArea.key && myGameArea.key == 68) {myGamePiece.speedX =
+	if (myGameArea.key && myGameArea.key[68]) {myPlayer.speedX =
 10; }
-	if (myGameArea.key && myGameArea.key == 87) {myGamePiece.speedY =
+	if (myGameArea.key && myGameArea.key [87]) {myPlayer.speedY =
 -10; }
-	if (myGameArea.key && myGameArea.key == 83) {myGamePiece.speedY =
+	if (myGameArea.key && myGameArea.key [83]) {myPlayer.speedY =
 10; }
-	myGamePiece.newPos();
-	myGamePiece.update(myGamePiece.color);
+	myPlayer.newPos();
+	myPlayer.update(myPlayer.color);
 	myGameCoin.update();
 	//calls collision between the two objects
-	if (hitBox(myGamePiece, myGameCoin)==true){
+	if (hitBox(myPlayer, myGameCoin)==true){
 		//placeholder test for collision
-		myGamePiece.update("white")
+		myPlayer.update("white")
 		score=score+100;
 	}
 }
@@ -142,4 +143,5 @@ function hitBox(source, object){ {
 		}
 		return collision;
 	}
+}
 }

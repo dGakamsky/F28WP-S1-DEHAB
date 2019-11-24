@@ -20,7 +20,7 @@ body{
     border: 1px solid blueviolet;
     width: 500px;
     height: 600px;
-    margin: auto;
+    margin: 1% auto;
     position: relative;
     text-align: left
 }
@@ -29,7 +29,7 @@ body{
     border: 1px solid blueviolet;
     width: 200px;
     height: 100px;
-    margin: 300px auto;
+    margin: 20% auto;
     position: relative;
     text-align: center
 }

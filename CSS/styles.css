@@ -52,3 +52,21 @@ body{
     
   }
 
+.inputBox{
+    color: blueviolet;
+      background-color: #000000;
+      border: 1px solid blueviolet;
+      text-align: center;
+}
+
+
+label{
+    text-align: right;
+    
+}
+
+a:link{
+    color: blueviolet;
+}
+
+

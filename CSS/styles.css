@@ -25,30 +25,6 @@ body{
     text-align: left
 }
 
-canvas {
-    border: 1px solid blueviolet;
-    background-color: #000000;
-}
-.button {
-  background-color: blueviolet;
-  border: none;
-  color: white;
-  padding: 15px 25px;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: purple;
-}
-  
-canvas {
-	border: 1px solid #000000;
-	background-color: #000000;
-	
-}
-
 #buttonContainer{
     border: 1px solid blueviolet;
     width: 200px;
@@ -59,16 +35,16 @@ canvas {
 }
 
 .button {
-    background-color: black;
-    /* border: solid 1px blueviolet; */
-    color: blueviolet;
-    padding: 15px 25px;
-    text-align: center;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    cursor: pointer;
-    
-  }
+  border: none;
+  cursor: pointer;
+  background-color: black;
+  color: blueviolet;
+  padding: 15px 25px;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
   
   .button:hover {
     background-color: rgba(137, 43, 226, 0.52);

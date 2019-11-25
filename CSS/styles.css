@@ -1,4 +1,3 @@
-
 .heading{
     text-align: center; 
     font-size: 3.2em;
@@ -35,7 +34,7 @@ body{
 }
 
 .button {
-  margin-top: 5px;
+  margin-top: 5.425px;
   border: none;
   cursor: pointer;
   background-color: black;
@@ -47,10 +46,10 @@ body{
 }
 
   
-  .button:hover {
+.button:hover {
     background-color: rgba(137, 43, 226, 0.52);
     
-  }
+}
 
 .inputBox{
     color: blueviolet;
@@ -69,4 +68,11 @@ a:link{
     color: blueviolet;
 }
 
-
+#textContainer{
+    border: 1px solid blueviolet;
+    width: 300px;
+    height: 400px;
+    margin:  auto;
+    position: 1% relative;
+    
+}

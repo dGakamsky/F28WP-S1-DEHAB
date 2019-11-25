@@ -3,6 +3,17 @@ var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var path = require('path');
+var mysql = require('mysql');
+// var session = require('express-session');
+// var bodyParser = require('body-parser');
+
+var dbConnection = mysql.createConnection({
+	host     : 'localhost',
+	user     : '127.0.0.1',
+	password : '',
+	database : 'GameDatabase'
+});
+
 
 
 app.use('/F28WP-S1-DEHAB-master',express.static(__dirname + '/F28WP-S1-DEHAB-master'))
@@ -23,8 +34,8 @@ app.get('/LoginSignUp', function (req, res){
 });
 
 
-http.listen(5050, function(){
-  console.log('listening on *:5050');
+http.listen(8080, function(){
+  console.log('listening on *:8080');
 });
 
 

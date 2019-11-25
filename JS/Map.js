@@ -298,8 +298,8 @@ Keyboard.isDown = function (keyCode) {
 
 Game.load = function () {
     return [
-        Loader.loadImage('Map', '../assets/Map.png'),
-        Loader.loadImage('char', '../assets/character.png')
+        Loader.loadImage('Map', '../Map.png'),
+        Loader.loadImage('char', '../character.png')
     ];
 };
 

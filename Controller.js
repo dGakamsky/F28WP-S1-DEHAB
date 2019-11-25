@@ -1,3 +1,4 @@
+//based on an online tutorial from freecodecamp.org
 const User = require('..\F28WP-S1-DEHAB\User.js')
 
 exports.createUser = (req, res, next) => {

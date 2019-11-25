@@ -4,6 +4,24 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var path = require('path');
 var mysql = require('mysql');
+var path = require('path');
+const bodyParser = require('body-parser')
+const expressValidator = require('express-validator')
+const app = express()
+const router = express.Router()
+
+app.use(bodyParser.json())
+
+app.use(expressValidator())
+
+app.use('/api', router)
+
+router.post(
+  '/',
+  Controller.validate('createUser'),
+  Controller.createUser,
+)
+
 // var session = require('express-session');
 // var bodyParser = require('body-parser');
 
